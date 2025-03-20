@@ -1,10 +1,9 @@
-/* My Awesome Styles */
-
-/* Diagnostic Styling 
-  * Change Background Color
-  * Outline Elements
-*/
-
+#flame{
+  opacity: 0;
+}
+#google{
+  
+}
 /* Doodle Stage */
 #stage {
   background: #ccc;

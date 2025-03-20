@@ -100,6 +100,64 @@ speedo.to(".speed", {
   
 })
 }
+function flame(){
+  let flame = gsap.timeline();
+
+  flame.to("#flame", {
+    duration: 2,
+  x: "+=20",
+  })
+  flame.to("#flame", {
+    duration: 1,
+  x: "-=40",
+  opacity: 1,
+  })
+  flame.from("#flame", {
+  opacity: 0
+  })
+  flame.to("#flame", {
+    duration: 1.5,
+  x: "+=40",
+  })
+  flame.to("#flame", {
+    duration: 1,
+  x: "-=40",
+  opacity: 1
+  })
+  flame.from("#flame", {
+    duration: 1,
+  opacity: 0
+  })
+  flame.to("#flame", {
+    duration: 1,
+  x: "+=40",
+  })
+  flame.to("#flame", {
+    duration: 1,
+  x: "-=40",
+  opacity: 1
+  })
+  flame.from("#flame", {
+    duration: 1,
+  opacity: 0
+  })
+  
+  flame.to("#flame", {
+    duration: 1,
+  x: "+=40",
+  })
+  flame.to("#flame", {
+    duration: 1,
+  x: "-=40",
+  opacity: 1
+  })
+  flame.from("#flame", {
+    duration: 1,
+  opacity: 0
+  })
+  
+
+}
 
 function car(){
   let shell = gsap.timeline();
@@ -178,7 +236,7 @@ shell.to("#civic", {
  
   shell.to("#civic", {
   
-  duration: 2,
+  duration: 1,
   x: "+=500",
   
   
@@ -196,14 +254,36 @@ wheels.to(".wheel", {
   
   
 })
+
   
+}
+function googleAnimation(){
+const google = gsap.timeline();
+  google.fromTo(
+    "#google",
+    {
+      x: "-100%", // Start off-screen to the left
+      opacity: 0, // Start invisible
+    },
+    {
+      duration: 25, // Duration of the animation
+      x: "0%", // Move into the visible area
+      opacity: 1, // Fade in
+      ease: "power2.out", // Smooth easing
+    }
+  )
+
+
+
 }
 
 var master = gsap.timeline();
 
 master
+.add(flame())
 .add(speedometer())
 .add(car())
+.add(googleAnimation())
 
 
 
